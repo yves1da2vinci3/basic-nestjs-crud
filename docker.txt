@@ -1,0 +1,15 @@
+nestapp:
+    container_name: nestapp
+    image: yvesdavinci01/nestapp:1.0.0
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      - DB_TYPE=postgres
+      - PG_USER=postgres
+      - PG_PASSWORD=postgres
+      - PG_DB=postgres
+      - PG_PORT=5433
+      - PG_HOST=db
+    depends_on:
+      - db
